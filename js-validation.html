@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+</head>
+<body>
+    Enter your name: <input type="text" id="a" onkeyup="clearmsg('sp1')" placeholder="Enter Name">
+    <span style="color: red" id="sp1"></span><br><br>
+    Enter your address: <input type="text" id="b" onkeyup="clearmsg('sp2')" placeholder="Enter Address">
+    <span style="color:red" id="sp2" ></span><br><br>
+    Enter your Email: <input type="text" id="c" onkeyup="clearmsg('sp3')" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+    <span style="color:red" id="sp3"></span><br><br>
+    Enter your age: <input type="text" id="d" onkeyup="clearmsg('sp4')" placeholder="Enter Age">
+    <span style="color: red" id="sp4"></span><br><br>
+    Enter your Phone: <input type="text" id="e" onkeyup="clearmsg('sp5')" placeholder="Enter Phone no" pattern="[0-9]{10}">
+    <span style="color:red" id="sp5"></span><br><br><br>
+    <button onclick=" validation()">submit</button>
+
+
+</body>
+<script>
+    function validation()
+    {
+        var name=document.getElementById("a").value;
+        var address=document.getElementById("b").value;
+        var email=document.getElementById("c").value;
+        var age=document.getElementById("d").value;
+        var phone=document.getElementById("e").value;
+        if(name=="")
+        {
+            document.getElementById("sp1").innerHTML="enter your name";
+            return false;
+        }
+        if(address=="")
+        {
+            document.getElementById("sp2").innerHTML="enter your address";
+            return false;
+        }
+        if(email=="")
+        {
+            document.getElementById("sp3").innerHTML="enter your email";
+            return false;
+        }
+        if(age=="")
+        {
+            document.getElementById("sp4").innerHTML="enter your age";
+            return false;
+        }
+        if(phone=="")
+        {
+            document.getElementById("sp5").innerHTML="enter your phone";
+        }
+
+    }
+    function clearmsg(sp)
+    {
+        document.getElementById(sp).innerHTML="";
+    }
+</script>
+</html>
